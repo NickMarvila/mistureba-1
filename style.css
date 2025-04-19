@@ -1,80 +1,114 @@
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f0f0f0;
+/* === Reset básico === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+/* === Corpo centralizado === */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: sans-serif;
+  background-color: #f0f0f0;
+  padding: 40px;
+  text-align: center;
+}
+
+/* === Grade com espaçamento === */
 .grid {
-    display: grid;
-    grid-template-columns: repeat(3, 200px);
-    grid-gap: 100px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 800px;
+  margin: 50px auto;
 }
+
+/* === Quadrado com borda e animação === */
 .quadrado {
-    width: 100px;
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #ddd;
-    border: 5px solid #ff0000;
-    cursor: pointer;
+  width: 120px;
+  height: 120px;
+  border: 5px solid red;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-radius: 12px;
 }
+
+/* === Efeito hover nos quadrados === */
+.quadrado:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
+}
+
+/* === Imagem redondinha no quadrado === */
 .quadrado img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
 }
-body {
-    background-color: #f0f0f0;
-    font-family: sans-serif;
-    text-align: center;
-  }
-  
+
+/* === Animação tremor ao clicar === */
+@keyframes tremor {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(3px, -3px); }
+  50% { transform: translate(-3px, 3px); }
+  75% { transform: translate(3px, 3px); }
+  100% { transform: translate(0, 0); }
+}
+
+.tremendo {
+  animation: tremor 0.3s linear;
+}
+
+/* === Botão “Modo Caralho” fixo === */
+.botao-mode {
+  padding: 10px 20px;
+  font-weight: bold;
+  background-color: black;
+  color: white;
+  border: 2px solid red;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+}
+
+.botao-mode:hover {
+  background-color: red;
+  color: black;
+  transform: scale(1.1);
+}
+
+/* === Scroll suave === */
+html {
+  scroll-behavior: smooth;
+}
+
+/* === Responsivo pra celular === */
+@media (max-width: 600px) {
   .grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    justify-items: center;
-    margin-top: 50px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
-  
+
   .quadrado {
-    border: 4px solid red;
-    padding: 5px;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-  }
-  
-  .quadrado:hover {
-    transform: scale(1.1);
-  }
-  
-  img {
     width: 100px;
     height: 100px;
-    object-fit: cover;
   }
-  
-  /*tremor*/
-  @keyframes tremor {
-    0% { transform: translate(0, 0); }
-    25% { transform: translate(3px, -3px); }
-    50% { transform: translate(-3px, 3px); }
-    75% { transform: translate(3px, 3px); }
-    100% { transform: translate(0, 0); }
-  }
-  
-  .tremendo {
-    animation: tremor 0.3s linear;
-  }
-  
+}
 
+@keyframes gira {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 
-
-
-
-
-
-  
