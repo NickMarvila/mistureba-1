@@ -7,27 +7,24 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div>
-        <ul>
-        <li><a href="default.asp">Home</a></li>
-        <li><a href="news.asp">News</a></li>
-        <li><a href="contact.asp">Contact</a></li>
-        <li><a href="about.asp">About</a></li>
-      </ul>
-    </div>
-    <div class="grid">
-        <div class="quadrado" onclick="playSound('./sound/trem.mp3')"><img src="./images/dioguete.png" alt="Imagem 1"></div>
-        <div class="quadrado" onclick="playSound('./sound/Áudio nhann')"><img src="./images/gustavo.jpg" alt="Imagem do nhann"></div>
-    </div>
-<div>
-    <button class="botao-mode" onclick="trocaModoEscuro()">Alternar Modo</button>
-</div>
-<div>
-    <button class="botao-mode" onclick="modoCaralho()">Modo Caralho</button>
-</div>
+    <ul class="navbar">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">News</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#" class="botao-mode" id="botaoModo" onclick="trocaModoEscuro()">Modo Escuro</a></li>
+        <li><button class="botao-menu" onclick="modoCaralho()">Modo Caralho</button></li>
+    </ul>
 
-<script src="sons.js"></script>
-<script src="config.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <div class="grid">
+        <div class="quadrado" onclick="playSound('./sound/trem.mp3')">
+            <img src="./images/dioguete.png" alt="Imagem 1">
+        </div>
+        <div class="quadrado" onclick="playSound('./sound/Áudio nhann.mp3')">
+            <img src="./images/gustavo.jpg" alt="Imagem do nhann">
+        </div>
+    </div>
+    <script src="config.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 </body>
 </html>
